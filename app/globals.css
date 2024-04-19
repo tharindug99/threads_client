@@ -16,18 +16,72 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.rotating-curved-text {
+  -webkit-animation: spin 8s linear infinite;
+  -moz-animation: spin 8s linear infinite;
+  animation: spin 8s linear infinite;
+  color: white;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Contain the slider within the viewport */
+._overflow-hidden {
+  width: 800%;
+  height: auto; /* Adjust based on your needs */
+  position: relative;
+  overflow: hidden;
+}
+
+/* The gallery slider */
+.gallery-slider {
+  display: flex;
+  animation: slide 200s linear infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-slider {
+    display: flex;
+    animation: slide 50s linear infinite;
+  }
+}
+
+/* Individual image container */
+.image-container {
+  flex-shrink: 0;
+}
+
+/* Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Since you'll duplicate images */
+  }
+}
+
+.ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.5, 1) infinite;
+}
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
   }
 }
