@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import Modal from "../Modal";
 import Logo from "../Logo";
@@ -7,8 +8,8 @@ import Button, { LinkButton } from "../Button";
 import { useTransition, animated } from "@react-spring/web";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { useAuth } from "@/app/context/AuthContext";
-import useInputs from "@/app/hooks/useInputs";
+import { useAuth } from "@/context/AuthContext";
+import useInputs from "@/hooks/useInputs";
 
 export default function WaitListModal() {
   const { values, onChange, setValue } = useInputs({

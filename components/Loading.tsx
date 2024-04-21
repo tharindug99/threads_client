@@ -1,6 +1,6 @@
 import React from "react";
 import { useLottie } from "lottie-react";
-import animationData from "../../public/loading.json";
+import animationData from "../public/loading.json";
 
 export default function Loading() {
   const { View } = useLottie({

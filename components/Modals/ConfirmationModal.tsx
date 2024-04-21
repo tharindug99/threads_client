@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../Modal";
 import Logo from "../Logo";
 import Button from "../Button";
-import useModal from "@/app/hooks/useModal";
+import useModal from "@/hooks/useModal";
 
 type Props = {
   title: string;

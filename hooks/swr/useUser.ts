@@ -1,5 +1,5 @@
-import { useAuth, useAuthUser } from "@/app/context/AuthContext";
-import api from "@/app/utils/api";
+import { useAuth, useAuthUser } from "@/context/AuthContext";
+import api from "@/utils/api";
 import { serviceURLs } from "@/constant";
 import useSWR, { Fetcher } from "swr";
 
