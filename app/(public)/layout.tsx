@@ -2,6 +2,7 @@ import "../globals.css";
 import type { Metadata } from "next";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
+import LeftSideBar from "@/components/LeftSideBar";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <React.Fragment>
       <Navigation />
-      {children}
+      <div style={{ display: "flex" }}>
+        <LeftSideBar />
+        <div style={{ flex: 1 }}>{children}</div>
+      </div>
       <Footer />
     </React.Fragment>
   );
